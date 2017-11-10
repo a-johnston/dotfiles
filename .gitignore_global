@@ -1,1 +1,9 @@
-/home/adam/.gitignore_global
+__pycache__/
+venv/
+*.swp
+*.swo
+.coverage
+*.out
+*.pyc
+.venv
+dump.rdb
