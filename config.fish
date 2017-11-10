@@ -1,0 +1,1 @@
+/home/adam/.config/fish/config.fish
