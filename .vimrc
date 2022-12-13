@@ -1,24 +1,24 @@
-" Plugins
-"
-" ctrlp.vim/
-" nerdtree/
-" python-syntax/
-" supertab/
-" syntastic/
-" vim-airline/
-" vim-airline-themes/
-" vim-fugitive/
+call plug#begin()
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'dag/vim-fish'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'ervandew/supertab'
+
+call plug#end()
 
 set nocp
-execute pathogen#infect()
 
 syntax on
 set background=dark
-colorscheme radicalgoodspeed
-"colorscheme gruvbox
+colorscheme gruvbox
+" colorscheme radicalgoodspeed
 set number
 highlight Comment cterm=italic
-set mouse=a
 
 set hlsearch
 set incsearch
@@ -36,10 +36,10 @@ set softtabstop=4
 set expandtab
 
 set laststatus=2
-let g:syntastic_python_checkers=['python']
 
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
@@ -48,23 +48,19 @@ nnoremap <silent> <C-n> :bprevious<CR>
 nnoremap <silent> <S-w> :bd<CR>
 nnoremap <silent> <S-q> :q<CR>
 
-nnoremap <silent> <S-c> :SyntasticCheck<CR>
 map <S-n> :NERDTreeToggle<CR>
 map <S-f> :NERDTreeFind<CR>
 map <C-s> :set spell!<CR>
+
+map <C-f> :GFiles<CR>
 
 set splitbelow
 set splitright
 
 let mapleader = ','
+set mouse=n
 
 set encoding=utf-8
-
-" air-line
-let g:airline_powerline_fonts = 1
-"let g:airline_theme="raven"
-"let g:airline_theme="badwolf"
-"let g:airline_theme="luna"
 
 set timeoutlen=1000 ttimeoutlen=0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/__pycache__/*,*/.*/*,*.pyc

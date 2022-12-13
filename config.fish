@@ -1,12 +1,9 @@
 alias vi vim
-set PATH ~/bin ~/go/bin $PATH
-set GOPATH /home/adam/go
 
 export STEAM_FRAME_FORCE_CLOSE=1
 
+set -x TERM xterm-256color-italic
 set -x EDITOR /usr/bin/vim
-
-eval (python -m virtualfish auto_activation)
 
 if [ -n "$DISPLAY" ]
     exit 0
