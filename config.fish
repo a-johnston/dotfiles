@@ -2,6 +2,7 @@ if status is-interactive
     alias vi vim
     set -x TERM xterm-256color-italic
     set -x EDITOR /usr/bin/vim
+    set --erase VIRTUAL_ENV_DISABLE_PROMPT
 end
 
 if test -d /opt/homebrew

@@ -67,7 +67,7 @@ set encoding=utf-8
 
 set timeoutlen=1000 ttimeoutlen=0
 
-let g:lsp_settings_servers_dir = '/Users/adam/.config/vim-lsp-servers/'
+let g:lsp_settings_servers_dir = '~/.config/vim-lsp-servers/'
 let g:lsp_document_code_action_signs_hint = {'text': ' '}
 
 
