@@ -4,9 +4,12 @@ if status is-interactive
     set -x EDITOR /usr/bin/vim
 end
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if test -d /opt/homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export HOMEBREW_NO_ENV_HINTS=1
+    export HOMEBREW_NO_ENV_HINTS=1
+end
+
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 
 fzf --fish | source
