@@ -1,16 +1,17 @@
-alias vi vim
-
-export STEAM_FRAME_FORCE_CLOSE=1
-
-set -x TERM xterm-256color-italic
-set -x EDITOR /usr/bin/vim
-
-if [ -n "$DISPLAY" ]
-    exit 0
+if status is-interactive
+    alias vi vim
+    set -x TERM xterm-256color-italic
+    set -x EDITOR /usr/bin/vim
 end
 
-if [ `(ps ax | grep -v grep | grep -i xorg)` ]
-    exit 0
-end
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-startx
+export HOMEBREW_NO_ENV_HINTS=1
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+
+fzf --fish | source
+
+autovenv
+
+alias ane "git commit -a --amend --no-edit"
+alias ae "git commit -a --amend"

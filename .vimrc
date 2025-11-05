@@ -1,13 +1,13 @@
 call plug#begin()
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dag/vim-fish'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 call plug#end()
 
@@ -33,10 +33,10 @@ set ruler
 
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+set smartindent
+set autoindent
 
 set laststatus=2
-
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -48,11 +48,14 @@ nnoremap <silent> <C-n> :bprevious<CR>
 nnoremap <silent> <S-w> :bd<CR>
 nnoremap <silent> <S-q> :q<CR>
 
-map <S-n> :NERDTreeToggle<CR>
-map <S-f> :NERDTreeFind<CR>
-map <C-s> :set spell!<CR>
+nnoremap <C-s> :set spell!<CR>
+nnoremap <C-x> :RG<space>
 
-map <C-f> :GFiles<CR>
+nnoremap <C-f> :Files<CR>
+
+nnoremap <F1> :LspNextDiagnostic<CR>
+nnoremap <F2> :LspRename<CR>
+nnoremap <F3> :LspDefinition<CR>
 
 set splitbelow
 set splitright
@@ -63,10 +66,28 @@ set mouse=n
 set encoding=utf-8
 
 set timeoutlen=1000 ttimeoutlen=0
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/__pycache__/*,*/.*/*,*.pyc
+
+let g:lsp_settings_servers_dir = '/Users/adam/.config/vim-lsp-servers/'
+let g:lsp_document_code_action_signs_hint = {'text': ' '}
+
+
+" let g:lsp_settings = {
+" \   'pylsp-all': {
+" \     'workspace_config': {
+" \       'pylsp': {
+" \         'configurationSources': ['flake8']
+" \       }
+" \     }
+" \   },
+" \}
+" let g:lsp_settings_filetype_python = ["pylsp-all", "ruff", "ty"]
+let g:lsp_settings_filetype_python = ["ruff", "ty"]
+
+set scl=no
 
 " Avoid e173
 if argc() > 1
    silent blast
    silent bfirst
 endif
+
