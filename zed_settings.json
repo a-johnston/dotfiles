@@ -1,0 +1,84 @@
+{
+  "completions": {
+    "lsp_insert_mode": "replace_suffix"
+  },
+  "disable_ai": true,
+  "title_bar": {
+    "show_sign_in": false
+  },
+  "icon_theme": "Zed (Default)",
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "ollama",
+      "model": "llama3.2:latest"
+    }
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "format_on_save": "off",
+  "vim_mode": true,
+  "ui_font_size": 13,
+  "buffer_font_size": 12,
+  "buffer_font_family": "Source Code Pro for Powerline",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Zedokai Darker (Filter Spectrum)"
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/*.uid"
+  ],
+  "git": {
+    "git_gutter": "hide",
+    "gutter_debounce": null,
+    "inline_blame": {
+      "enabled": false
+    },
+    "hunk_style": null
+  },
+  "lsp": {
+    "omnisharp": {
+      "binary": {
+        "path": "/Users/adam/.cargo/bin/csharp-language-server"
+      }
+    },
+    "pyright": {
+      "initialization_options": {
+        "disablePullDiagnostics": true
+      },
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace"
+        }
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff", "pyright"],
+      // "language_servers": ["ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        { "code_action": "source.organizeImports.ruff" },
+        { "code_action": "source.fixAll.ruff" },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  }
+}
