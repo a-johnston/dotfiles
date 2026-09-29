@@ -17,5 +17,7 @@ fzf --fish | source
 
 autovenv
 
+alias gs "git status"
+alias cm "git commit -a -m"
 alias ane "git commit -a --amend --no-edit"
 alias ae "git commit -a --amend"

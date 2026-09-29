@@ -1,5 +1,6 @@
 __pycache__/
-.DS_Store/
+.claude/
+.DS_Store
 venv/
 *.swp
 *.swo

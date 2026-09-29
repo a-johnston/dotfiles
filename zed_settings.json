@@ -1,33 +1,17 @@
 {
-  "completions": {
-    "lsp_insert_mode": "replace_suffix"
-  },
-  "disable_ai": true,
-  "title_bar": {
-    "show_sign_in": false
-  },
-  "icon_theme": "Zed (Default)",
-  "agent": {
-    "model_parameters": [],
-    "default_model": {
-      "provider": "ollama",
-      "model": "llama3.2:latest"
-    }
-  },
-  "telemetry": {
-    "metrics": false,
-    "diagnostics": false
-  },
-  "format_on_save": "off",
-  "vim_mode": true,
-  "ui_font_size": 13,
-  "buffer_font_size": 12,
+  "show_edit_predictions": false,
+  "auto_update": true,
   "buffer_font_family": "Source Code Pro for Powerline",
-  "theme": {
-    "mode": "dark",
-    "light": "One Light",
-    "dark": "Zedokai Darker (Filter Spectrum)"
+  "buffer_font_size": 12.0,
+  "cli_default_open_behavior": "existing_window",
+  "collaboration_panel": {
+    "dock": "left",
   },
+  "completions": {
+    "lsp_insert_mode": "replace_suffix",
+  },
+  "context_servers": {},
+  "disable_ai": false,
   "file_scan_exclusions": [
     "**/.git",
     "**/.svn",
@@ -38,47 +22,79 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings",
-    "**/*.uid"
+    "**/*.uid",
+    "**/.godot/",
   ],
+  "format_on_save": "off",
   "git": {
     "git_gutter": "hide",
     "gutter_debounce": null,
+    "hunk_style": null,
     "inline_blame": {
-      "enabled": false
+      "enabled": false,
     },
-    "hunk_style": null
   },
-  "lsp": {
-    "omnisharp": {
-      "binary": {
-        "path": "/Users/adam/.cargo/bin/csharp-language-server"
-      }
-    },
-    "pyright": {
-      "initialization_options": {
-        "disablePullDiagnostics": true
-      },
-      "settings": {
-        "python.analysis": {
-          "diagnosticMode": "workspace"
-        }
-      }
-    }
+  "git_panel": {
+    "dock": "left",
   },
+  "icon_theme": "Zed (Default)",
   "languages": {
     "Python": {
-      "language_servers": ["ruff", "pyright"],
-      // "language_servers": ["ruff"],
       "format_on_save": "on",
       "formatter": [
-        { "code_action": "source.organizeImports.ruff" },
-        { "code_action": "source.fixAll.ruff" },
+        {
+          "code_action": "source.organizeImports.ruff",
+        },
+        {
+          "code_action": "source.fixAll.ruff",
+        },
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    }
-  }
+            "name": "ruff",
+          },
+        },
+      ],
+      "language_servers": ["ruff", "ty"],
+    },
+    "CSharp": {
+      "show_edit_predictions": false,
+      "use_on_type_format": false,
+    },
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+        "checkOnSave": true,
+      },
+    },
+    "ty": {
+      "settings": {
+        "diagnosticMode": "workspace",
+      },
+    },
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "semantic_tokens": "combined",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "theme": {
+    "dark": "Zedokai Darker (Filter Spectrum)",
+    "light": "One Light",
+    "mode": "dark",
+  },
+  "title_bar": {
+    "show_sign_in": false,
+  },
+  "ui_font_size": 13.0,
+  "vim_mode": true,
 }

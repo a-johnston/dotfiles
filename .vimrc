@@ -70,20 +70,20 @@ set timeoutlen=1000 ttimeoutlen=0
 let g:lsp_settings_servers_dir = '~/.config/vim-lsp-servers/'
 let g:lsp_document_code_action_signs_hint = {'text': ' '}
 
-
-" let g:lsp_settings = {
-" \   'pylsp-all': {
-" \     'workspace_config': {
-" \       'pylsp': {
-" \         'configurationSources': ['flake8']
-" \       }
-" \     }
-" \   },
-" \}
-" let g:lsp_settings_filetype_python = ["pylsp-all", "ruff", "ty"]
 let g:lsp_settings_filetype_python = ["ruff", "ty"]
 
 set scl=no
+
+if has('persistent_undo')
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+    set undodir=~/.vim/undo
+
+    if !isdirectory(&undodir)
+        call mkdir(&undodir, "p", 0700)
+    endif
+endif
 
 " Avoid e173
 if argc() > 1
