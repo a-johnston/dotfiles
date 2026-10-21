@@ -1,5 +1,4 @@
 {
-  "show_edit_predictions": false,
   "auto_update": true,
   "buffer_font_family": "Source Code Pro for Powerline",
   "buffer_font_size": 12.0,
@@ -11,7 +10,7 @@
     "lsp_insert_mode": "replace_suffix",
   },
   "context_servers": {},
-  "disable_ai": false,
+  "disable_ai": true,
   "file_scan_exclusions": [
     "**/.git",
     "**/.svn",
@@ -59,6 +58,7 @@
     "CSharp": {
       "show_edit_predictions": false,
       "use_on_type_format": false,
+      "language_servers": ["!csharp-ls", "!omnisharp", "roslyn"],
     },
   },
   "lsp": {
