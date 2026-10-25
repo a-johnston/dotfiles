@@ -5,12 +5,6 @@ if status is-interactive
     set --erase VIRTUAL_ENV_DISABLE_PROMPT
 end
 
-if test -d /opt/homebrew
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-
-    export HOMEBREW_NO_ENV_HINTS=1
-end
-
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
 
 fzf --fish | source
