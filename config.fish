@@ -5,9 +5,15 @@ if status is-interactive
     set --erase VIRTUAL_ENV_DISABLE_PROMPT
 end
 
-export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+if type -q fzf
+    export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+    fzf --fish | source
+end
 
-fzf --fish | source
+if type -q devbox
+    devbox completion fish | source
+    alias box devbox
+end
 
 autovenv
 
